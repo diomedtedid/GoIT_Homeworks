@@ -37,17 +37,17 @@ public class Company {
     @JoinTable (name = "companies_has_projects",
             joinColumns = @JoinColumn (name = "companies_id"),
             inverseJoinColumns = @JoinColumn (name = "projects_id"))
-    private List<Project> projectList;
+    private List<ProjectEntity> projectEntityList;
 
     public Company() {
     }
 
-    public Company(long id, String name, String address, List<DeveloperEntity> developerEntityList, List<Project> projectList) {
+    public Company(long id, String name, String address, List<DeveloperEntity> developerEntityList, List<ProjectEntity> projectEntityList) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.developerEntityList = developerEntityList;
-        this.projectList = projectList;
+        this.projectEntityList = projectEntityList;
     }
 
     public long getId() {
@@ -82,12 +82,12 @@ public class Company {
         this.developerEntityList = developerEntityList;
     }
 
-    public List<Project> getProjectList() {
-        return projectList;
+    public List<ProjectEntity> getProjectEntityList() {
+        return projectEntityList;
     }
 
-    public void setProjectList(List<Project> projectList) {
-        this.projectList = projectList;
+    public void setProjectEntityList(List<ProjectEntity> projectEntityList) {
+        this.projectEntityList = projectEntityList;
     }
 
     @Override
@@ -97,7 +97,7 @@ public class Company {
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", developerEntityList=" + developerEntityList +
-                ", projectList=" + projectList +
+                ", projectEntityList=" + projectEntityList +
                 '}';
     }
 }

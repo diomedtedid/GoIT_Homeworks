@@ -2,6 +2,7 @@ import controller.Controller;
 import dao.*;
 import dao.hibernatedaoimpl.*;
 import entity.DeveloperEntity;
+import entity.ProjectEntity;
 import entity.SkillEntity;
 import tools.HibernateSessionFactory;
 
@@ -23,7 +24,7 @@ public class Module3App {
         controller.setCustomerDao(customerDao);
         controller.setCompanyDao(companyDao);
 
-        System.out.println(controller.readAll(DeveloperEntity.class));
+        System.out.println(controller.readAll(ProjectEntity.class));
 
         HibernateSessionFactory.getSessionFactory().close();
     }

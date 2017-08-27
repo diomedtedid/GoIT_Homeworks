@@ -1,6 +1,6 @@
 package dao;
 
-import entity.Project;
+import entity.ProjectEntity;
 
-public interface ProjectDao extends GeneralDao<Long, Project> {
+public interface ProjectDao extends GeneralDao<Long, ProjectEntity> {
 }

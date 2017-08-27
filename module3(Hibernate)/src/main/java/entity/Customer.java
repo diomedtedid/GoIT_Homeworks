@@ -31,16 +31,16 @@ public class Customer {
     inverseJoinColumns = @JoinColumn (name = "projects_id"))
     //TODO: В чем разница в различных видах указания присоединенных таблиц
 
-    private List<Project> projectList;
+    private List<ProjectEntity> projectEntityList;
 
     public Customer() {
     }
 
-    public Customer(long id, String name, String lastName, List<Project> projectList) {
+    public Customer(long id, String name, String lastName, List<ProjectEntity> projectEntityList) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        this.projectList = projectList;
+        this.projectEntityList = projectEntityList;
     }
 
     public long getId() {
@@ -67,12 +67,12 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public List<Project> getProjectList() {
-        return projectList;
+    public List<ProjectEntity> getProjectEntityList() {
+        return projectEntityList;
     }
 
-    public void setProjectList(List<Project> projectList) {
-        this.projectList = projectList;
+    public void setProjectEntityList(List<ProjectEntity> projectEntityList) {
+        this.projectEntityList = projectEntityList;
     }
 
     @Override
@@ -81,7 +81,7 @@ public class Customer {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", projectList=" + projectList +
+                ", projectEntityList=" + projectEntityList +
                 '}';
     }
 }

@@ -23,7 +23,7 @@
 
         <mapping class="entity.SkillEntity"/>
         <mapping class="entity.DeveloperEntity"/>
-        <mapping class="entity.Project"/>
+        <mapping class="entity.ProjectEntity"/>
         <mapping class="entity.Customer"/>
         <mapping class="entity.Company"/>
 

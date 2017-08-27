@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table (name = "projects")
-public class Project {
+public class ProjectEntity {
 
     @Id
     @Column (name = "proj_id")
@@ -33,10 +33,10 @@ public class Project {
             inverseJoinColumns = @JoinColumn (name = "developers_id", referencedColumnName = "dev_id"))
     private List<DeveloperEntity> developerEntityList;
 
-    public Project() {
+    public ProjectEntity() {
     }
 
-    public Project(long id, String projectName, double cost, List<DeveloperEntity> developerEntityList) {
+    public ProjectEntity(long id, String projectName, double cost, List<DeveloperEntity> developerEntityList) {
         this.id = id;
         this.projectName = projectName;
         this.cost = cost;
@@ -77,7 +77,7 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Project{" +
+        return "ProjectEntity{" +
                 "id=" + id +
                 ", projectName='" + projectName + '\'' +
                 ", cost=" + cost +
