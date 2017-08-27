@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table (name = "developers")
-public class Developer {
+public class DeveloperEntity {
 
     @Id
     @Column (name = "dev_id")
@@ -38,10 +38,10 @@ public class Developer {
     inverseJoinColumns = @JoinColumn (name = "skills_id", referencedColumnName = "skill_id"))
     private List<SkillEntity> skillEntityList;
 
-    public Developer() {
+    public DeveloperEntity() {
     }
 
-    public Developer(long id, String name, String lastName, String email, double salary, List<SkillEntity> skillEntityList) {
+    public DeveloperEntity(long id, String name, String lastName, String email, double salary, List<SkillEntity> skillEntityList) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -103,11 +103,11 @@ public class Developer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Developer developer = (Developer) o;
+        DeveloperEntity developerEntity = (DeveloperEntity) o;
 
-        if (!name.equals(developer.name)) return false;
-        if (!lastName.equals(developer.lastName)) return false;
-        return email.equals(developer.email);
+        if (!name.equals(developerEntity.name)) return false;
+        if (!lastName.equals(developerEntity.lastName)) return false;
+        return email.equals(developerEntity.email);
     }
 
     @Override
@@ -120,7 +120,7 @@ public class Developer {
 
     @Override
     public String toString() {
-        return "Developer{" +
+        return "DeveloperEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +

@@ -30,7 +30,7 @@ public class Company {
     @JoinTable (name = "companies_has_developers",
     joinColumns = @JoinColumn (name = "companies_id"),
     inverseJoinColumns = @JoinColumn (name = "developers_id"))
-    private List<Developer> developerList;
+    private List<DeveloperEntity> developerEntityList;
 
     @ManyToMany (fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
 //    @Fetch(value = FetchMode.SUBSELECT) //TODO: узнать, почему здесь эта строчка не нужна
@@ -42,11 +42,11 @@ public class Company {
     public Company() {
     }
 
-    public Company(long id, String name, String address, List<Developer> developerList, List<Project> projectList) {
+    public Company(long id, String name, String address, List<DeveloperEntity> developerEntityList, List<Project> projectList) {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.developerList = developerList;
+        this.developerEntityList = developerEntityList;
         this.projectList = projectList;
     }
 
@@ -74,12 +74,12 @@ public class Company {
         this.address = address;
     }
 
-    public List<Developer> getDeveloperList() {
-        return developerList;
+    public List<DeveloperEntity> getDeveloperEntityList() {
+        return developerEntityList;
     }
 
-    public void setDeveloperList(List<Developer> developerList) {
-        this.developerList = developerList;
+    public void setDeveloperEntityList(List<DeveloperEntity> developerEntityList) {
+        this.developerEntityList = developerEntityList;
     }
 
     public List<Project> getProjectList() {
@@ -96,7 +96,7 @@ public class Company {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", developerList=" + developerList +
+                ", developerEntityList=" + developerEntityList +
                 ", projectList=" + projectList +
                 '}';
     }

@@ -1,6 +1,6 @@
 package dao;
 
-import entity.Developer;
+import entity.DeveloperEntity;
 
-public interface DeveloperDao extends GeneralDao<Long, Developer>{
+public interface DeveloperDao extends GeneralDao<Long, DeveloperEntity>{
 }

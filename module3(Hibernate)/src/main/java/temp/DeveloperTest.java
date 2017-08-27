@@ -2,33 +2,33 @@ package temp;
 
 import dao.DeveloperDao;
 import dao.hibernatedaoimpl.DeveloperHibernateDaoImpl;
-import entity.Developer;
+import entity.DeveloperEntity;
 import entity.SkillEntity;
 
 import java.util.Arrays;
 
 public class DeveloperTest {
     public static void main(String[] args) {
-        Developer developer = new Developer();
-        developer.setName("testName1");
-        developer.setLastName("testLastName1");
-        developer.setEmail("test1@test1.com");
-        developer.setSalary(100500);
+        DeveloperEntity developerEntity = new DeveloperEntity();
+        developerEntity.setName("testName1");
+        developerEntity.setLastName("testLastName1");
+        developerEntity.setEmail("test1@test1.com");
+        developerEntity.setSalary(100500);
 
         SkillEntity skillEntity1 = new SkillEntity("ASP");
         skillEntity1.setId(9);
 
         SkillEntity skillEntity2 = new SkillEntity("someSkill");
 
-        developer.setSkillEntityList(Arrays.asList(skillEntity1));
+        developerEntity.setSkillEntityList(Arrays.asList(skillEntity1));
 
-        System.out.println(developer);
+        System.out.println(developerEntity);
 
         DeveloperDao developerDao = new DeveloperHibernateDaoImpl();
-//        developerDao.create(developer);
+//        developerDao.create(developerEntity);
 
-        developer.setId(16);
-        developerDao.delete(developer);
+        developerEntity.setId(16);
+        developerDao.delete(developerEntity);
 
     }
 }
