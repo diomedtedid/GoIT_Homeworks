@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "skills")
-public class Skill {
+public class SkillEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "skill_id")
@@ -18,10 +18,10 @@ public class Skill {
     @Column (name = "skill_skill")
     private String skill;
 
-    public Skill() {
+    public SkillEntity() {
     }
 
-    public Skill(String skill) {
+    public SkillEntity(String skill) {
         this.skill = skill;
     }
 
@@ -46,9 +46,9 @@ public class Skill {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Skill skill1 = (Skill) o;
+        SkillEntity skillEntity1 = (SkillEntity) o;
 
-        return skill.equalsIgnoreCase(skill1.skill);
+        return skill.equalsIgnoreCase(skillEntity1.skill);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Skill {
 
     @Override
     public String toString() {
-        return "Skill{" +
+        return "SkillEntity{" +
                 "id=" + id +
                 ", skill='" + skill + '\'' +
                 '}';

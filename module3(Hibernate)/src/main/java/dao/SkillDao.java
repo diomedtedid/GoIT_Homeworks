@@ -1,6 +1,6 @@
 package dao;
 
-import entity.Skill;
+import entity.SkillEntity;
 
-public interface SkillDao extends GeneralDao <Long, Skill> {
+public interface SkillDao extends GeneralDao <Long, SkillEntity> {
 }

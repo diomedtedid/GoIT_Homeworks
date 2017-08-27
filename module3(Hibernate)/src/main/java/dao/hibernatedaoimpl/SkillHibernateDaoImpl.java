@@ -2,9 +2,9 @@ package dao.hibernatedaoimpl;
 
 import dao.AbstractHibernateDao;
 import dao.SkillDao;
-import entity.Skill;
+import entity.SkillEntity;
 
-public class SkillHibernateDaoImpl extends AbstractHibernateDao<Long, Skill> implements SkillDao {
+public class SkillHibernateDaoImpl extends AbstractHibernateDao<Long, SkillEntity> implements SkillDao {
 
 
 

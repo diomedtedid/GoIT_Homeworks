@@ -21,7 +21,7 @@
         <!--<property name="format_sql">false</property>-->
 
 
-        <mapping class="entity.Skill"/>
+        <mapping class="entity.SkillEntity"/>
         <mapping class="entity.Developer"/>
         <mapping class="entity.Project"/>
         <mapping class="entity.Customer"/>

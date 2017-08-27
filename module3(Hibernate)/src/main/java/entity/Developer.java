@@ -36,18 +36,18 @@ public class Developer {
     @JoinTable (name = "developers_has_skills",
             joinColumns = @JoinColumn (name = "developers_id", referencedColumnName = "dev_id"),
     inverseJoinColumns = @JoinColumn (name = "skills_id", referencedColumnName = "skill_id"))
-    private List<Skill> skillList;
+    private List<SkillEntity> skillEntityList;
 
     public Developer() {
     }
 
-    public Developer(long id, String name, String lastName, String email, double salary, List<Skill> skillList) {
+    public Developer(long id, String name, String lastName, String email, double salary, List<SkillEntity> skillEntityList) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.salary = salary;
-        this.skillList = skillList;
+        this.skillEntityList = skillEntityList;
     }
 
     public long getId() {
@@ -90,12 +90,12 @@ public class Developer {
         this.salary = salary;
     }
 
-    public List<Skill> getSkillList() {
-        return skillList;
+    public List<SkillEntity> getSkillEntityList() {
+        return skillEntityList;
     }
 
-    public void setSkillList(List<Skill> skillList) {
-        this.skillList = skillList;
+    public void setSkillEntityList(List<SkillEntity> skillEntityList) {
+        this.skillEntityList = skillEntityList;
     }
 
     @Override
@@ -126,7 +126,7 @@ public class Developer {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", salary=" + salary +
-                ", skillList=" + skillList +
+                ", skillEntityList=" + skillEntityList +
                 "}\r\n";
     }
 }

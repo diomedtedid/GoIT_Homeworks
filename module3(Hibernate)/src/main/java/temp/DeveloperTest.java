@@ -3,7 +3,7 @@ package temp;
 import dao.DeveloperDao;
 import dao.hibernatedaoimpl.DeveloperHibernateDaoImpl;
 import entity.Developer;
-import entity.Skill;
+import entity.SkillEntity;
 
 import java.util.Arrays;
 
@@ -15,12 +15,12 @@ public class DeveloperTest {
         developer.setEmail("test1@test1.com");
         developer.setSalary(100500);
 
-        Skill skill1 = new Skill("ASP");
-        skill1.setId(9);
+        SkillEntity skillEntity1 = new SkillEntity("ASP");
+        skillEntity1.setId(9);
 
-        Skill skill2 = new Skill("someSkill");
+        SkillEntity skillEntity2 = new SkillEntity("someSkill");
 
-        developer.setSkillList(Arrays.asList(skill1));
+        developer.setSkillEntityList(Arrays.asList(skillEntity1));
 
         System.out.println(developer);
 

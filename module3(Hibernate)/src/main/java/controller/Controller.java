@@ -53,7 +53,7 @@ public class Controller {
             case "Developer":
                 return this.developerDao;
 
-            case "Skill":
+            case "SkillEntity":
                 return this.skillDao;
 
             case "Project":
