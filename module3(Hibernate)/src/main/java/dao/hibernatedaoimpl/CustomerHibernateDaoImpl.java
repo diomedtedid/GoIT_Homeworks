@@ -2,7 +2,7 @@ package dao.hibernatedaoimpl;
 
 import dao.AbstractHibernateDao;
 import dao.CustomerDao;
-import entity.Customer;
+import entity.CustomerEntity;
 
-public class CustomerHibernateDaoImpl extends AbstractHibernateDao <Long, Customer> implements CustomerDao {
+public class CustomerHibernateDaoImpl extends AbstractHibernateDao <Long, CustomerEntity> implements CustomerDao {
 }

@@ -59,7 +59,7 @@ public class Controller {
             case "ProjectEntity":
                 return this.projectDao;
 
-            case "Customer":
+            case "CustomerEntity":
                 return this.customerDao;
 
             default:

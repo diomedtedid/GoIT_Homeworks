@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table (name = "customers")
-public class Customer {
+public class CustomerEntity {
 
     @Id
     @Column (name = "cust_id")
@@ -33,10 +33,10 @@ public class Customer {
 
     private List<ProjectEntity> projectEntityList;
 
-    public Customer() {
+    public CustomerEntity() {
     }
 
-    public Customer(long id, String name, String lastName, List<ProjectEntity> projectEntityList) {
+    public CustomerEntity(long id, String name, String lastName, List<ProjectEntity> projectEntityList) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -77,7 +77,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "CustomerEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
