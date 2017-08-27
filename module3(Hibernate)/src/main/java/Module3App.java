@@ -1,10 +1,7 @@
 import controller.Controller;
 import dao.*;
 import dao.hibernatedaoimpl.*;
-import entity.CustomerEntity;
-import entity.DeveloperEntity;
-import entity.ProjectEntity;
-import entity.SkillEntity;
+import entity.*;
 import tools.HibernateSessionFactory;
 
 /**
@@ -25,7 +22,7 @@ public class Module3App {
         controller.setCustomerDao(customerDao);
         controller.setCompanyDao(companyDao);
 
-        System.out.println(controller.readAll(CustomerEntity.class));
+        System.out.println(controller.readAll(CompanyEntity.class));
 
         HibernateSessionFactory.getSessionFactory().close();
     }

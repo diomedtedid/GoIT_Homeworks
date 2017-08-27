@@ -25,7 +25,7 @@
         <mapping class="entity.DeveloperEntity"/>
         <mapping class="entity.ProjectEntity"/>
         <mapping class="entity.CustomerEntity"/>
-        <mapping class="entity.Company"/>
+        <mapping class="entity.CompanyEntity"/>
 
 
     </session-factory>

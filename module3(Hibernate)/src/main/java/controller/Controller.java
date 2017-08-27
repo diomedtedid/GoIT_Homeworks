@@ -47,7 +47,7 @@ public class Controller {
     private GeneralDao daoDispatcher (Class clazz) {
         String className = clazz.getSimpleName();
         switch (className) {
-            case "Company":
+            case "CompanyEntity":
                 return this.companyDao;
 
             case "DeveloperEntity":

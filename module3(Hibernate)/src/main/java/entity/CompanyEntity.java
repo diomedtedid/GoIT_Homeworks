@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table (name = "companies")
-public class Company {
+public class CompanyEntity {
 
     @Id
     @Column (name = "company_id")
@@ -39,10 +39,10 @@ public class Company {
             inverseJoinColumns = @JoinColumn (name = "projects_id"))
     private List<ProjectEntity> projectEntityList;
 
-    public Company() {
+    public CompanyEntity() {
     }
 
-    public Company(long id, String name, String address, List<DeveloperEntity> developerEntityList, List<ProjectEntity> projectEntityList) {
+    public CompanyEntity(long id, String name, String address, List<DeveloperEntity> developerEntityList, List<ProjectEntity> projectEntityList) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -92,7 +92,7 @@ public class Company {
 
     @Override
     public String toString() {
-        return "Company{" +
+        return "CompanyEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +

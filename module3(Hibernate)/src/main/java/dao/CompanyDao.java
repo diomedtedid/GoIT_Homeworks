@@ -1,6 +1,6 @@
 package dao;
 
-import entity.Company;
+import entity.CompanyEntity;
 
-public interface CompanyDao extends GeneralDao <Long, Company>{
+public interface CompanyDao extends GeneralDao <Long, CompanyEntity>{
 }
