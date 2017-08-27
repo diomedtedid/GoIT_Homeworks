@@ -1,0 +1,4 @@
+3. Для задания 2 написать запрос который ищет предложение "I want to buy a flat"
+
+GET /?query=I+want+to+buy+a+flat HTTP/1.1
+Host: search.com

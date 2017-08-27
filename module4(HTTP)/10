@@ -1,0 +1,11 @@
+10. Написать запрос который будет отправлен серверу при загрузке файла file.txt на сейчас upload.com
+
+POST / HTTP/1.1
+Host: upload.com
+Content-Type: multipart/form-data; boundary=FILE
+Content-Length: 149
+
+--FILE
+Content-Disposition: form-data; name="news_file"; filename="news.txt"
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: binary

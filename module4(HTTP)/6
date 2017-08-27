@@ -1,0 +1,18 @@
+6. Написать вид ответа сервера в случае:
+все хорошо,
+ресурс не найдет,
+ресурс найден но надо перенаправить на другой ресурс,
+запрашиваемый HTTP метод сервером на поддерживается,
+внутренняя ошибка.
+
+HTTP/1.1 200 OK
+
+HTTP/1.1 404 Not Found
+
+HTTP/1.1 301 Moved Permanently
+Location: http://www.new-location.org
+
+
+HTTP/1.1 501 Not Implemented
+
+HTTP/1.1 500 Internal Server Error

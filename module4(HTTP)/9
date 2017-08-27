@@ -1,0 +1,9 @@
+9. У вас есть логин форма с полями: username, password.
+Написать HTTP запрос который будет отправлен на auth.com/login для входа пользователя.
+
+POST /auth.com/login HTTP/1.1
+Host: www.myhost.com
+Content-Type: text/plain
+Content-Length: 27
+
+username=user&password=pass

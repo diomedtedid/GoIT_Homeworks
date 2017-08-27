@@ -1,0 +1,6 @@
+8. Написать запрос GET на сервер example.com в котором передается сессия через сookie.
+
+GET / HTTP/1.1
+Host: www.example.com
+Cookie: name=value
+

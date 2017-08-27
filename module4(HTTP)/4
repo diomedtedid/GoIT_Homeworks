@@ -1,0 +1,5 @@
+4. Написать HTTP запрос который будет отправлен на сейвер buyme.com когда пользователь нажмет кпопку "купить".
+
+GET /?entity=somegood&quantity=1 HTTP/1.1
+Host: buyme.com
+
