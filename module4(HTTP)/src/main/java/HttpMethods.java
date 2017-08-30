@@ -1,10 +1,7 @@
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -113,10 +110,28 @@ public class HttpMethods {
 
     public void ex5SimpleDelete () {
         printSeparatorLine();
+        System.out.println("Simple DELETE http method\r\n");
+
+        HttpDelete httpDelete = new HttpDelete(URL1 +"/pet/7");
+
+        System.out.println("DELETE request :" + httpDelete.toString());
+        sendHttpRequest(httpDelete);
     }
 
     public void ex6httpResponces () {
         printSeparatorLine();
+        System.out.println("Different answers\r\n");
+        System.out.println("HTTP/1.1 200 OK\n" +
+                "\n" +
+                "HTTP/1.1 404 Not Found\n" +
+                "\n" +
+                "HTTP/1.1 301 Moved Permanently\n" +
+                "Location: http://www.new-location.org\n" +
+                "\n" +
+                "\n" +
+                "HTTP/1.1 501 Not Implemented\n" +
+                "\n" +
+                "HTTP/1.1 500 Internal Server Error");
     }
 
     public void ex7GetWithCloseSession () {
