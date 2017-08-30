@@ -1,3 +1,5 @@
+import com.sun.corba.se.impl.orbutil.HexOutputStream;
+import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -5,13 +7,21 @@ import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.HttpMultipartMode;
+import org.apache.http.entity.mime.MultipartEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 /**
  * Created by User on 23.08.2017.
@@ -64,6 +74,7 @@ public class HttpMethods {
                     .addParameter("password", "secret");
 
             httpGet.setURI(uriBuilder.build());
+
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -132,22 +143,64 @@ public class HttpMethods {
                 "HTTP/1.1 501 Not Implemented\n" +
                 "\n" +
                 "HTTP/1.1 500 Internal Server Error");
+
     }
 
+    /*
+    7. Написать запрос GET на сервер example.com который говорит серверу за закрывать соеденение.
+     */
     public void ex7GetWithCloseSession () {
         printSeparatorLine();
+        String url = URL1 + "/user/logout";
+        HttpRequestBase httpGet = new HttpGet(url);
+
+        System.out.println("Executing request: " + httpGet.getRequestLine());
+
+        sendHttpRequest(httpGet);
     }
 
+
+    /*
+    Написать запрос GET на сервер example.com в котором передается сессия через сookie.
+     */
     public void ex8GetWithSession () {
         printSeparatorLine();
+        HttpGet httpGet = new HttpGet(URL1 + "/pet/1");
+        httpGet.setHeader("Cookie", "ID=1");
+        System.out.println(httpGet);
+        sendHttpRequest(httpGet);
     }
 
+    /*
+    9. У вас есть логин форма с полями: username, password.
+    Написать HTTP запрос который будет отправлен на auth.com/login для входа пользователя.
+     */
     public void ex9PostWithLoging () {
         printSeparatorLine();
+        System.out.println("User logging with get and parameters\r\n");
+        HttpGet httpGet = new HttpGet(URL1 + "/user/login");
+        httpGet.setHeader("username", "user");
+        httpGet.setHeader("password", "user");
+        System.out.println(httpGet );
+        sendHttpRequest(httpGet);
     }
 
+    /*
+    10. Написать запрос который будет отправлен серверу при загрузке файла file.txt на сейчас upload.com
+     */
     public void ex10PostWithFileLoad () {
         printSeparatorLine();
+        HttpPost httpPost = new HttpPost(URL1 + "/pet/7/uploadImage");
+        File file = new File("module4(HTTP)/src/main/resources/picture.jpg");
+        String message = "This is a multipart post";
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+        builder.addBinaryBody("upfile", file, ContentType.DEFAULT_BINARY, "module4(HTTP)/src/main/resources/picture.jpg");
+        builder.addTextBody("text", message, ContentType.DEFAULT_BINARY);
+//
+        HttpEntity entity = builder.build();
+        httpPost.setEntity(entity);
+        sendHttpRequest(httpPost);
     }
 
     private void printSeparatorLine() {
