@@ -1,13 +1,19 @@
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
@@ -72,6 +78,36 @@ public class HttpMethods {
 
     public void ex4SimplePost () {
         printSeparatorLine();
+        System.out.println("Simple POST method\r\n");
+
+        String url = URL1 + "/pet";
+        HttpPost httpPost = new HttpPost(url);
+        String massage = "{\n" +
+                "  \"id\": 7,\n" +
+                "  \"category\": {\n" +
+                "    \"id\": 7,\n" +
+                "    \"name\": \"Sharik\"\n" +
+                "  },\n" +
+                "  \"name\": \"Sharik\",\n" +
+                "  \"photoUrls\": [\n" +
+                "    \"string\"\n" +
+                "  ],\n" +
+                "  \"tags\": [\n" +
+                "    {\n" +
+                "      \"id\": 7,\n" +
+                "      \"name\": \"Sharik\"\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"status\": \"available\"\n" +
+                "}";
+
+        HttpEntity httpEntity = new StringEntity(massage, ContentType.APPLICATION_JSON);
+        httpPost.setEntity(httpEntity);
+        System.out.println("Executing request: " + httpPost.toString());
+        System.out.println("Executing request body: " + massage);
+
+       sendHttpRequest(httpPost);
+
     }
 
     public void ex5SimpleDelete () {
