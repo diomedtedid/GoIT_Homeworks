@@ -101,10 +101,11 @@ public class HttpMethods {
                 "  \"status\": \"available\"\n" +
                 "}";
 
-        HttpEntity httpEntity = new StringEntity(massage, ContentType.APPLICATION_JSON);
+        StringEntity httpEntity = new StringEntity(massage, ContentType.APPLICATION_JSON);
         httpPost.setEntity(httpEntity);
         System.out.println("Executing request: " + httpPost.toString());
-        System.out.println("Executing request body: " + massage);
+        System.out.println("Executing request headers: " + httpEntity.toString());
+        System.out.println("Executing request body: \r\n" + massage);
 
        sendHttpRequest(httpPost);
 
