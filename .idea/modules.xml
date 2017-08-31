@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/module2(JDBC)/module2(JDBC).iml" filepath="$PROJECT_DIR$/module2(JDBC)/module2(JDBC).iml" />
       <module fileurl="file://$PROJECT_DIR$/module3(Hibernate)/module3(Hibernate).iml" filepath="$PROJECT_DIR$/module3(Hibernate)/module3(Hibernate).iml" />
       <module fileurl="file://$PROJECT_DIR$/module4(HTTP)/module4(HTTP).iml" filepath="$PROJECT_DIR$/module4(HTTP)/module4(HTTP).iml" />
+      <module fileurl="file://$PROJECT_DIR$/module5(JSPServlets)/module5(JSP/module5(JSPServlets).iml" filepath="$PROJECT_DIR$/module5(JSPServlets)/module5(JSP/module5(JSPServlets).iml" />
     </modules>
   </component>
 </project>
