@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Hello page</title>
 </head>
 <body>
-
+<h1>${massage}</h1>
+<h1><%=java.time.LocalDateTime.now()%></h1>
 </body>
 </html>
