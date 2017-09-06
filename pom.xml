@@ -12,7 +12,8 @@
         <module>module2(JDBC)</module>
         <module>module3(Hibernate)</module>
         <module>module4(HTTP)</module>
-        <module>module5(JSPServlets)</module>
+        <module>module5(JSPServlet)</module>
+
 
     </modules>
 

@@ -3,13 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Homeworks.iml" filepath="$PROJECT_DIR$/Homeworks.iml" />
-      <module fileurl="file://D:\JavaCore\GoIT_Homeworks\module2(JDBC)\src\main\main.iml" filepath="D:\JavaCore\GoIT_Homeworks\module2(JDBC)\src\main\main.iml" />
-      <module fileurl="file://D:\JavaCore\GoIT_Homeworks\module4(HTTP)\src\main\main1.iml" filepath="D:\JavaCore\GoIT_Homeworks\module4(HTTP)\src\main\main1.iml" />
-      <module fileurl="file://D:\JavaCore\GoIT_Homeworks\module3(Hibernate)\src\main\main2.iml" filepath="D:\JavaCore\GoIT_Homeworks\module3(Hibernate)\src\main\main2.iml" />
       <module fileurl="file://$PROJECT_DIR$/module2(JDBC)/module2(JDBC).iml" filepath="$PROJECT_DIR$/module2(JDBC)/module2(JDBC).iml" />
       <module fileurl="file://$PROJECT_DIR$/module3(Hibernate)/module3(Hibernate).iml" filepath="$PROJECT_DIR$/module3(Hibernate)/module3(Hibernate).iml" />
       <module fileurl="file://$PROJECT_DIR$/module4(HTTP)/module4(HTTP).iml" filepath="$PROJECT_DIR$/module4(HTTP)/module4(HTTP).iml" />
-      <module fileurl="file://$PROJECT_DIR$/module5(JSPServlets)/module5(JSP/module5(JSPServlets).iml" filepath="$PROJECT_DIR$/module5(JSPServlets)/module5(JSP/module5(JSPServlets).iml" />
+      <module fileurl="file://$PROJECT_DIR$/module5(JSPServlet)/module5(JSPServlet).iml" filepath="$PROJECT_DIR$/module5(JSPServlet)/module5(JSPServlet).iml" />
     </modules>
   </component>
 </project>

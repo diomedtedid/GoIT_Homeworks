@@ -9,6 +9,7 @@
         <module name="module2(JDBC)" />
         <module name="module3(Hibernate)" />
         <module name="module4(HTTP)" />
+        <module name="module5(JSPServlet)" />
         <module name="module5JSPServlets" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="module2(JDBC)" target="1.8" />
       <module name="module3(Hibernate)" target="1.8" />
       <module name="module4(HTTP)" target="1.7" />
+      <module name="module5(JSPServlet)" target="1.8" />
       <module name="module5JSPServlets" target="1.8" />
     </bytecodeTargetLevel>
   </component>
