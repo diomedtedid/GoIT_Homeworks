@@ -16,9 +16,10 @@ public class SimpleServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Path achieved!");
-        String massage = "Hello fucking World!";
-        req.setAttribute("massage", massage);
-        req.getRequestDispatcher("WEB-INF/jsp/SimpleJsp.jsp").forward(req, resp);
+//        String massage = "Hello fucking World!";
+//        req.setAttribute("massage", massage);
+//        req.getRequestDispatcher("WEB-INF/jsp/SimpleJsp.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/html/index.html").forward(req, resp);
 
     }
 }
