@@ -5,36 +5,37 @@ import model.domain.User;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by User on 07.09.2017.
  */
-public abstract class AbstractDaoImpl <K extends Serializable, T> implements GeneralDao <K, T> {
-    private List<T> entityList = new ArrayList<>();
+public abstract class AbstractMemoryDaoImpl<K extends Serializable, T> implements GeneralDao <K, T> {
+    private Set<T> entitySet = new HashSet<>();
 
     @Override
     public void create(T entity) {
-
+        entitySet.add(entity);
     }
 
     @Override
-    public T read(K key) {
-        return null;
-    }
+    public abstract T read(K key);
 
     @Override
     public void update(T entity) {
-
+        entitySet.remove(entity);
+        entitySet.add(entity);
     }
 
     @Override
     public void delete(T entity) {
-
+        entitySet.remove(entity);
     }
 
     @Override
-    public List<T> readAllByUser(User user) {
-        return null;
+    public Set<T> readAll() {
+        return entitySet;
     }
 }

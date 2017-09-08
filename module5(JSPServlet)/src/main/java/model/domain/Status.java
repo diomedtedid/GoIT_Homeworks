@@ -5,7 +5,7 @@ package model.domain;
  */
 public enum Status {
     OPEN,
-    INPROGRESS,
+    IN_PROGRESS,
     DONE,
     REOPEN
 }
