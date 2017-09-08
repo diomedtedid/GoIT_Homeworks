@@ -1,5 +1,7 @@
 package model.dao;
 
+import model.domain.User;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,5 +13,5 @@ public interface GeneralDao<K extends Serializable, T> {
     T read(K key);
     void update(T entity);
     void delete(T entity);
-    List<T> readAll();
+    List<T> readAllByUser(User user);
 }
