@@ -16,18 +16,18 @@ import java.util.stream.Collectors;
 public class Controller {
     private UserDao userDao;
     private TaskDao taskDao;
-    private Controller controller;
+    private static Controller controller;
 
     private Controller() {
     }
 
-    public Controller getController() {
+    public static Controller getController() {
 
         if (controller == null) {
-            this.controller = new Controller();
+            controller = new Controller();
         }
 
-        return this.controller;
+        return controller;
     }
 
     public List<Task> getTaskListByUser (User user) {
