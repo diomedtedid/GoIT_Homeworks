@@ -2,7 +2,6 @@ package model.controllers;
 
 import model.dao.TaskDao;
 import model.dao.UserDao;
-import model.dao.inmemorydaoimpl.UserMemoryDaoImpl;
 import model.domain.Task;
 import model.domain.User;
 
@@ -48,6 +47,14 @@ public class Controller {
 
     public void saveUser (User user) {
         userDao.create(user);
+    }
+
+    public User getUser (long id) {
+        return userDao.read(id);
+    }
+
+    public Task getTask (long id) {
+        return  taskDao.read(id);
     }
 
     public void saveTask (Task task) {

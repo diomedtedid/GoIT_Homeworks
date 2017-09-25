@@ -18,12 +18,18 @@ import java.util.stream.Stream;
  * Created by User on 10.09.2017.
  */
 
-@WebServlet (urlPatterns = "/todo")
+@WebServlet (name = "TodoServlet", urlPatterns = "/todo")
 public class TodoServlet extends HttpServlet {
     private Controller controller;
 
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
         User user;
         String userName = null;
         System.out.println("Path achived");

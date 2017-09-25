@@ -12,6 +12,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>ToDoList</title>
@@ -70,7 +71,9 @@
             </td>
             <td>
                 <form align="center" name="create_task" method="get" action="/edit">
-                    <button>Edit task</button>
+                    <input type="hidden" name="userId" value="<%=user.getId()%>">
+                    <input type="hidden" name="taskId" value="<%=task.getId()%>">
+                    <input type="submit" value="Edit task">
                 </form>
             </td>
         </tr>
