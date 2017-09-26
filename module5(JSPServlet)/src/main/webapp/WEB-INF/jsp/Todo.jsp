@@ -22,6 +22,9 @@
     Controller controller = Controller.getController();
 %>
 <div align="center" >
+    <%
+        User user = (User) request.getAttribute("user");
+    %>
     <table  border="1">
         <caption align="center">TODO list</caption>
         <tr>
@@ -35,14 +38,15 @@
             <th>Status</th>
             <th>
                 <form align="right" name="create_task" method="get" action="/create">
-                    <button>Create new task</button>
+                    <input type="hidden" name="userName" value="<%=user.getUserName()%>">
+                    <input type="hidden" name="userId" value="<%=user.getId()%>">
+                    <input type="submit" value="Create new task">
                 </form>
             </th>
         </tr>
 
             <%
-                User user = (User) request.getAttribute("user");
-                List<Task> taskList = controller.getTaskListByUser(new User("testUser"));
+                List<Task> taskList = controller.getTaskListByUser(new User(user.getUserName()));
                 for (Task task : taskList) { %>
         <tr>
             <td>

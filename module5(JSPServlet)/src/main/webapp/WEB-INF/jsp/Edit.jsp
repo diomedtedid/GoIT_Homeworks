@@ -135,8 +135,10 @@
             </tr>
         </table>
 
-
         <input type="submit" value="Save">
+    </form>
+    <form method="get" action="/todo">
+        <input type="submit" value="Cancel" />
     </form>
 </div>
 </body>

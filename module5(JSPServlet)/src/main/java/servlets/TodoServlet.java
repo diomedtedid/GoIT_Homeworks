@@ -4,7 +4,7 @@ import model.controllers.Controller;
 import model.dao.inmemorydaoimpl.TaskMemoryDaoImpl;
 import model.dao.inmemorydaoimpl.UserMemoryDaoImpl;
 import model.domain.User;
-import temp.FillTasks;
+
 
 import javax.jws.soap.SOAPBinding;
 import javax.servlet.ServletException;
@@ -40,6 +40,8 @@ public class TodoServlet extends HttpServlet {
         //Получаем все куки с браузера
         Cookie[] cookies = req.getCookies();
 
+
+
         //TODO: разобраться, почему с первого захода нихрена кукисов нету, а только после второго захода
         //Если на браузере куков нету, то создаем кук user=sessionId и отправляем его клиенту
         if (req.getCookies() == null) {
@@ -47,7 +49,7 @@ public class TodoServlet extends HttpServlet {
             userName = httpSession.getId();
             resp.addCookie(new Cookie("user", userName));
             resp.flushBuffer();
-            cookies = req.getCookies();
+            resp.sendRedirect("/todo");
         }
 
         //Если куки на браузере есть, ищем среди них кук user
@@ -56,16 +58,22 @@ public class TodoServlet extends HttpServlet {
 
         //Если кука user нету, то создаем его. И создаем нового Юхера у нас в БД
         if (count == 0 ) {
+            System.out.println("Cookie user is absent");
             user = new User(userName);
             resp.addCookie(new Cookie("user", userName));
             controller.saveUser(user);
+            user = controller.getUserByName(userName);
         } else { //если кук user существует, вытагиваем его значение (имя юзера)
             userName = Arrays.asList(cookies).stream()
                     .filter(cookie -> cookie.getName().equalsIgnoreCase("user"))
                     .findFirst()
                     .get()
                     .getValue();
-            user = new User(userName);
+            user = controller.getUserByName(userName);
+            if (user == null) {
+                controller.saveUser(new User(userName));
+                user = controller.getUserByName(userName);
+            }
         }
 
         //Передаем объект User дальше на JSP страницу
@@ -78,12 +86,10 @@ public class TodoServlet extends HttpServlet {
     //Собераем все зависимости БД и Инициализируем доступ сервлета к БД при первом обращении к сервлету
     @Override
     public void init() throws ServletException {
-        System.out.println("Inicialization of Servlet");
+        System.out.println("Collect of controller");
         this.controller = Controller.getController();
         this.controller.setUserDao(new UserMemoryDaoImpl());
         this.controller.setTaskDao(new TaskMemoryDaoImpl());
 
-        //Заполняем БД тестовыми данными
-        FillTasks.fillTask();
     }
 }

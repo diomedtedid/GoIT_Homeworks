@@ -34,7 +34,7 @@ public class EditServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         System.out.println("Method POST /edit is achived");
         Task task = Controller.getController().getTask(Long.parseLong(req.getParameter("id")));
-        System.out.println(task);
+
         task.setTitle(req.getParameter("title"));
         task.setDescription(req.getParameter("description"));
         task.setComments(req.getParameter("comments"));
@@ -42,7 +42,7 @@ public class EditServlet extends HttpServlet {
         task.setStatus(Status.valueOf(req.getParameter("status")));
         Controller.getController().updateTask(task);
 
-        req.getRequestDispatcher("/todo").forward(req, resp);
+       resp.sendRedirect("/todo");
 
     }
 }

@@ -53,6 +53,21 @@ public class Controller {
         return userDao.read(id);
     }
 
+    public User getUserByName (String name) {
+        User user = null;
+
+        try {
+            user = userDao.readAll()
+            .stream()
+            .filter(uzer -> uzer.getUserName().equalsIgnoreCase(name))
+            .findFirst()
+            .get();
+        } catch (Exception e) {
+        }
+
+        return user;
+    }
+
     public Task getTask (long id) {
         return  taskDao.read(id);
     }
